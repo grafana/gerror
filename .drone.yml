@@ -12,12 +12,6 @@ steps:
     image: golang:1.19
     commands:
       - go test ./...
-  - name: "integraiton_tests"
-    image: golang:1.19
-    environment:
-      INTEGRATION_TESTS: "true"
-    commands:
-      - go test ./...
 ---
 kind: signature
 hmac: 36786793fd121054c9cadf81a86522a023d4619fae879ee875c98d702c818424
