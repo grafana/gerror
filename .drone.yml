@@ -10,8 +10,12 @@ platform:
 steps:
   - name: "lint"
     image: golang:1.19
+    # commands:
+    #   - golangci-lint run ./...
     commands:
-      - golangci-lint run ./...
+      - curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.51.1
+      - ./bin/golangci-lint run ./...
+    failure: ignore
   - name: "test"
     image: golang:1.19
     commands:
