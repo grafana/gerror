@@ -26,5 +26,5 @@ func TestWrite(t *testing.T) {
 
 	assert.Equal(t, http.StatusGatewayTimeout, recorder.Code)
 	assert.JSONEq(t, `{"message": "Timeout", "messageId": "test.thisIsExpected", "statusCode": 504}`, recorder.Body.String())
-	assert.Nil(t, ret)
+	assert.NoError(t, ret)
 }
